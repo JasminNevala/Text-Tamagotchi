@@ -1,5 +1,4 @@
 from random import randrange
-import items
 
 
 class Pet:
@@ -33,6 +32,11 @@ class Panda(Pet):
 class Kitten(Pet):
     def __init__(self):
         super().__init__(name="Kitten")
+
+
+class Tardigrade(Pet):
+    def __init__(self):
+        super().__init__(name="Tardigrade")
 
 
 def bored(self):

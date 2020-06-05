@@ -1,3 +1,4 @@
+import game
 import items
 
 
@@ -11,6 +12,27 @@ def print_toys():
     toys = [items.Ball(), items.Stick()]
     for i, item in enumerate(toys, 1):
         print("{}. {}".format(i, item))
+
+
+def print_pets():
+    pet_list = game.list_of_pets
+    for i, item in enumerate(pet_list, 1):
+        print("{}. {}".format(i, item))
+
+
+def choose_pet():
+    pet_list = game.list_of_pets
+    print("Choose a pet: ")
+    print_pets()
+    choice = input("")
+    try:
+        chosen_pet = pet_list[int(choice) - 1]
+        pet_name = chosen_pet.name
+        print("You chose {}!".format(pet_name))
+        player_pet = chosen_pet
+        return player_pet
+    except(ValueError, IndexError):
+        print("Invalid choice, try again.")
 
 
 def print_statistics(self):
@@ -54,3 +76,5 @@ def pet(self):
     self.mood = self.mood + petting_value
     print("You petted your {}. It loved it!".format(self.name))
     print("{}'s mood is now {}".format(self.name, self.mood))
+
+
